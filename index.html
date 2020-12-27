@@ -22,21 +22,21 @@
         </ul>
         
         <div class="for-text">
-            <textarea id="lzw-cnt" rows="10" cols="50" placeholder="请输入待编码内容"></textarea>
-            <textarea id="arith-cnt" rows="10" cols="50" placeholder="请输入待解码内容"></textarea>
+            <textarea id="old-text" rows="10" cols="50" placeholder="请输入待编码内容"></textarea>
+            <textarea id="new-text" rows="10" cols="50" placeholder="请输入待解码内容"></textarea>
     
         </div>
 
         <div class="for-bnt">
-            <button>编码</button>
-            <button>解码</button>
+            <button id="encode">编码</button>
+            <button id="decode">解码</button>
         </div>
 
     </nav>
 
     <header>
         <a href="#" class="logo">
-            Lab
+            Infomation Theory Lab
         </a>
         <img src="images/menu.png" id="open-menu" class="menu-btn">
     </header>
@@ -64,6 +64,91 @@
             document.getElementById('arith').checked=true;
             });
 
+    </script>
+
+    <script>
+        // LZW-compress a string
+        function lzw_encode(s) {
+            var dict = {};
+            var data = (s + "").split("");
+            var out = [];
+            var currChar;
+            var phrase = data[0];
+            var code = 256;
+            for (var i=1; i<data.length; i++) {
+                currChar=data[i];
+                if (dict[phrase + currChar] != null) {
+                    phrase += currChar;
+                }
+                else {
+                    out.push(phrase.length > 1 ? dict[phrase] : phrase.charCodeAt(0));
+                    dict[phrase + currChar] = code;
+                    code++;
+                    phrase=currChar;
+                }
+            }
+            out.push(phrase.length > 1 ? dict[phrase] : phrase.charCodeAt(0));
+            for (var i=0; i<out.length; i++) {
+                out[i] = String.fromCharCode(out[i]);
+            }
+            return out.join("");
+        }
+
+        // Decompress an LZW-encoded string
+        function lzw_decode(s) {
+            var dict = {};
+            var data = (s + "").split("");
+            var currChar = data[0];
+            var oldPhrase = currChar;
+            var out = [currChar];
+            var code = 256;
+            var phrase;
+            for (var i=1; i<data.length; i++) {
+                var currCode = data[i].charCodeAt(0);
+                if (currCode < 256) {
+                    phrase = data[i];
+                }
+                else {
+                phrase = dict[currCode] ? dict[currCode] : (oldPhrase + currChar);
+                }
+                out.push(phrase);
+                currChar = phrase.charAt(0);
+                dict[code] = oldPhrase + currChar;
+                code++;
+                oldPhrase = phrase;
+            }
+            return out.join("");
+        }
+    </script>
+
+    <script>
+        document.getElementById('encode').addEventListener('click',function(){
+            var method=1
+            if(document.getElementById('arith').checked==true){
+                method=2;
+            }
+
+            if(method==1){
+                originText=document.getElementById('old-text').value;
+                encodedText=lzw_encode(originText);
+                document.getElementById('new-text').value=encodedText;
+            }
+
+            });
+
+            document.getElementById('decode').addEventListener('click',function(){
+            var method=1
+            if(document.getElementById('arith').checked==true){
+                method=2;
+            }
+
+            if(method==1){
+                originText=document.getElementById('new-text').value;
+                decodedText=lzw_decode(originText);
+                document.getElementById('old-text').value=decodedText;
+            }
+
+            });
     </script>
     
 </body>
