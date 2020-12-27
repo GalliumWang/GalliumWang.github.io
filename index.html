@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>信息论实验</title>
+</head>
+<body style="background-color:#F3E0D9;">
+    <nav id="overlay">
+        <img src="images/close.png" class="close-btn" id="close-menu">
+        <ul>
+            <li>
+                <a id="lzw-text" href="#">LZW 编码</a>
+                <input type="radio" id="lzw" name="choice">
+
+            </li>
+            <li>
+                <a id="arith-text" href="#">算术编码</a>
+                <input type="radio" id="arith" name="choice">
+            </li>
+        </ul>
+        
+        <div class="for-text">
+            <textarea id="lzw-cnt" rows="10" cols="50" placeholder="请输入待编码内容"></textarea>
+            <textarea id="arith-cnt" rows="10" cols="50" placeholder="请输入待解码内容"></textarea>
+    
+        </div>
+
+        <div class="for-bnt">
+            <button>编码</button>
+            <button>解码</button>
+        </div>
+
+    </nav>
+
+    <header>
+        <a href="#" class="logo">
+            Lab
+        </a>
+        <img src="images/menu.png" id="open-menu" class="menu-btn">
+    </header>
+    <section>
+        <h1>信息论实验</h1>
+        <img src="images/main.png" width="450px">
+    </section>
+
+    <script>
+        var overlay=document.getElementById('overlay');
+        var closeMenu=document.getElementById('close-menu');
+        document.getElementById('open-menu').addEventListener('click',function(){
+            overlay.classList.add('show-menu');
+        });
+
+        document.getElementById('close-menu').addEventListener('click',function(){
+            overlay.classList.remove('show-menu');
+        });
+
+        document.getElementById('lzw-text').addEventListener('click',function(){
+            document.getElementById('lzw').checked=true;
+            });
+
+        document.getElementById('arith-text').addEventListener('click',function(){
+            document.getElementById('arith').checked=true;
+            });
+
+    </script>
+    
+</body>
+</html>
