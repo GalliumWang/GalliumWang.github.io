@@ -83,6 +83,13 @@ nav{
         }
     }
 
+    textarea{
+        opacity: 0;
+    }
+
+    button{
+        opacity: 0;
+    }
 }
 
 .show-menu{
@@ -99,6 +106,23 @@ nav{
     li:nth-of-type(2){
         animation: menu-item-anim .6s 1.2s forwards ease-in-out;
     }
+
+    textarea:nth-of-type(1){
+        animation: menu-item-anim .6s 1s forwards ease-in-out;
+    }
+
+    textarea:nth-of-type(2){
+        animation: menu-item-anim .6s 1.2s forwards ease-in-out;
+    }
+
+    button:nth-of-type(1){
+        animation: menu-item-anim .6s 1s forwards ease-in-out;
+    }
+
+    button:nth-of-type(2){
+        animation: menu-item-anim .6s 1.2s forwards ease-in-out;
+    }
+
 }
 
 @keyframes slide-menu{

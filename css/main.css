@@ -84,6 +84,14 @@ nav ul li {
   opacity: 0;
 }
 
+nav textarea {
+  opacity: 0;
+}
+
+nav button {
+  opacity: 0;
+}
+
 .show-menu {
   display: block;
   -webkit-animation: slide-menu 1s ease-in forwards;
@@ -101,6 +109,26 @@ nav ul li {
 }
 
 .show-menu li:nth-of-type(2) {
+  -webkit-animation: menu-item-anim .6s 1.2s forwards ease-in-out;
+          animation: menu-item-anim .6s 1.2s forwards ease-in-out;
+}
+
+.show-menu textarea:nth-of-type(1) {
+  -webkit-animation: menu-item-anim .6s 1s forwards ease-in-out;
+          animation: menu-item-anim .6s 1s forwards ease-in-out;
+}
+
+.show-menu textarea:nth-of-type(2) {
+  -webkit-animation: menu-item-anim .6s 1.2s forwards ease-in-out;
+          animation: menu-item-anim .6s 1.2s forwards ease-in-out;
+}
+
+.show-menu button:nth-of-type(1) {
+  -webkit-animation: menu-item-anim .6s 1s forwards ease-in-out;
+          animation: menu-item-anim .6s 1s forwards ease-in-out;
+}
+
+.show-menu button:nth-of-type(2) {
   -webkit-animation: menu-item-anim .6s 1.2s forwards ease-in-out;
           animation: menu-item-anim .6s 1.2s forwards ease-in-out;
 }
