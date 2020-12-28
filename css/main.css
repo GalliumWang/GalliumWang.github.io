@@ -30,7 +30,7 @@ section h1 {
   font-size: 3.5em;
   font-weight: lighter;
   margin: 10px 36%;
-  width: 70%;
+  width: 64%;
 }
 
 section img {
@@ -39,12 +39,12 @@ section img {
 }
 
 nav {
-  display: none;
+  display: block;
   position: absolute;
   padding: 2em;
   background: #BCC0E8;
   width: calc(100% - 4em);
-  height: calc(100vh - 3.5em);
+  height: calc(100vh - 4em);
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-transform-origin: right;
@@ -194,6 +194,119 @@ nav button {
     -webkit-transform: translateY(0);
             transform: translateY(0);
     opacity: 1;
+  }
+}
+
+.show-menu-close {
+  display: block;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-animation: slide-menu-close 0.6s 0.8s ease-in forwards;
+          animation: slide-menu-close 0.6s 0.8s ease-in forwards;
+}
+
+.show-menu-close .close-btn {
+  -webkit-animation: show-x-close 1s forwards;
+          animation: show-x-close 1s forwards;
+}
+
+.show-menu-close li:nth-of-type(1) {
+  -webkit-animation: menu-item-anim-close 1.2s forwards ease-in-out;
+          animation: menu-item-anim-close 1.2s forwards ease-in-out;
+}
+
+.show-menu-close li:nth-of-type(2) {
+  -webkit-animation: menu-item-anim-close 0.8s forwards ease-in-out;
+          animation: menu-item-anim-close 0.8s forwards ease-in-out;
+}
+
+.show-menu-close textarea:nth-of-type(1) {
+  -webkit-animation: menu-item-anim-close 1.2s forwards ease-in-out;
+          animation: menu-item-anim-close 1.2s forwards ease-in-out;
+}
+
+.show-menu-close textarea:nth-of-type(2) {
+  -webkit-animation: menu-item-anim-close 0.8s forwards ease-in-out;
+          animation: menu-item-anim-close 0.8s forwards ease-in-out;
+}
+
+.show-menu-close button:nth-of-type(1) {
+  -webkit-animation: menu-item-anim-close 1.2s forwards ease-in-out;
+          animation: menu-item-anim-close 1.2s forwards ease-in-out;
+}
+
+.show-menu-close button:nth-of-type(2) {
+  -webkit-animation: menu-item-anim-close 0.8s forwards ease-in-out;
+          animation: menu-item-anim-close 0.8s forwards ease-in-out;
+}
+
+@-webkit-keyframes slide-menu-close {
+  from {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-menu-close {
+  from {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes show-x-close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes show-x-close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes menu-item-anim-close {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+    opacity: 0;
+  }
+}
+
+@keyframes menu-item-anim-close {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+    opacity: 0;
   }
 }
 

@@ -29,7 +29,7 @@ section{
         font-size: 3.5em;
         font-weight: lighter;
         margin: 10px 36%;
-        width: 70%;
+        width: 64%;
     }
     img{
         margin-top: 1em;
@@ -40,12 +40,12 @@ section{
 }
 
 nav{
-    display: none;
+    display: block;
     position: absolute;
     padding: 2em;
     background: #BCC0E8;
     width: calc(100% - 4em);
-    height: calc(100vh - 3.5em);
+    height: calc(100vh - 4em);
     transform: scaleX(0);
     transform-origin: right;
     .close-btn{
@@ -153,6 +153,78 @@ nav{
         opacity: 1;
     }
 }
+
+
+
+
+.show-menu-close{
+    display: block;
+    transform: scaleX(1);
+    animation: slide-menu-close 0.6s 0.8s ease-in forwards;
+    .close-btn{
+        animation: show-x-close 1s forwards;
+    }
+
+    li:nth-of-type(1){
+        animation: menu-item-anim-close 1.2s forwards ease-in-out;
+    }
+
+    li:nth-of-type(2){
+        animation: menu-item-anim-close 0.8s forwards ease-in-out;
+    }
+
+    textarea:nth-of-type(1){
+        animation: menu-item-anim-close 1.2s forwards ease-in-out;
+    }
+
+    textarea:nth-of-type(2){
+        animation: menu-item-anim-close 0.8s forwards ease-in-out;
+    }
+
+    button:nth-of-type(1){
+        animation: menu-item-anim-close 1.2s forwards ease-in-out;
+    }
+
+    button:nth-of-type(2){
+        animation: menu-item-anim-close 0.8s forwards ease-in-out;
+    }
+
+}
+
+@keyframes slide-menu-close{
+    from{
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    to{
+        transform: scaleX(0);
+        opacity: 0;
+    }
+
+}
+
+@keyframes show-x-close{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes menu-item-anim-close{
+    from{
+        transform:translateY(0);
+        opacity: 1;
+    }
+    to{
+        transform:translateY(80px);
+        opacity: 0;
+    }
+}
+
+
+
 
 
 .for-text{
