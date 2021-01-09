@@ -26,14 +26,15 @@ header{
 section{
     padding: 4em;
     h1{
-        font-size: 3.5em;
+        font-size: 5em;
         font-weight: lighter;
-        margin: 10px 36%;
-        width: 64%;
+        margin-top: 5%;
+        margin-left: calc(50vw - 3.5em);
     }
     img{
+        width: 650px;
         margin-top: 1em;
-        margin-left: 28%;
+        margin-left: calc(50vw - 400px);
     }
 
 
@@ -57,7 +58,7 @@ nav{
 
     ul{
         list-style-type: none;
-        margin: 5% auto 0 auto;
+        margin: 5% auto 0 calc(50vw - 310px);
         padding: 0;
         display: grid;
         grid-template-columns: repeat(2,50%);
@@ -231,10 +232,12 @@ nav{
     margin: 2.5em auto;
     width: 80%;
     textarea:nth-of-type(1){
-        margin: auto 7em auto 4em;
+        font-size: 1.7em;
+        margin: auto 2em auto 50px;
     }
 
     textarea:nth-of-type(2){
+        font-size: 1.7em;
         margin: auto auto auto auto;
     }
 
@@ -244,7 +247,7 @@ nav{
     margin: 4em auto;
     width: 80%;
     button:nth-of-type(1){
-        margin: auto 1.5em auto 13em;
+        margin: auto 1.5em auto calc(50vw - 12em);
         font-size: 30px;
     }
 

@@ -42,7 +42,7 @@
     </header>
     <section>
         <h1>信息论实验</h1>
-        <img src="images/main.png" width="450px">
+        <img src="images/main.png">
     </section>
 
     <script>
@@ -69,6 +69,7 @@
     </script>
 
     <script>
+        document.getElementById("lzw").checked=true;
         // LZW-compress a string
         function lzw_encode(s) {
             var dict = {};
